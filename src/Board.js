@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Square from './Square.js';
 
 class Board extends React.Component {
@@ -12,6 +12,10 @@ class Board extends React.Component {
         };
     }
 
+    useEffect(asyc function() {
+        const squares = Array(9).fill(null);
+        this.setState({squares: squares});
+    }, []);
     handleClick(i) {
         const counter = this.state.counter+1;
         const squares = this.state.squares.slice();
